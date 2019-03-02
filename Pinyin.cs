@@ -90,7 +90,15 @@ namespace NPinyin
       StringBuilder sbPinyin = new StringBuilder();
       for (var i = 0; i < text.Length; ++i)
       {
-        string py = GetPinyin(text[i]);
+        string py = "";
+        if (string.Equals("女", text[i].ToString()))
+        {
+            py = "nv";
+        }
+        else
+        {
+            py = GetPinyin(text[i]);
+        }
         if (py != "") sbPinyin.Append(py);
         sbPinyin.Append(" ");
       }
